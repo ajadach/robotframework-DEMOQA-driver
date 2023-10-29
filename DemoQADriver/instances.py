@@ -1,7 +1,11 @@
 import uuid
 from SeleniumLibrary import SeleniumLibrary
+from robot.libraries.BuiltIn import BuiltIn
+from robot.libraries.Collections import Collections
 
 SELENIUM = SeleniumLibrary()
+BUILT_IN = BuiltIn()
+COL = Collections()
 
 
 def screenshot_on_fail(func):
