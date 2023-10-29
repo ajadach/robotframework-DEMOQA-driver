@@ -22,8 +22,8 @@ class TextBox():
         for param, value in zip(parameters, values):
             new_param_name = param.lower().replace(' ', '_')
 
-            if new_param_name in TEXT_BOX['INPUT_XPATH']:
-                xpath = TEXT_BOX['INPUT_XPATH'][new_param_name]
+            if new_param_name in TEXT_BOX['INPUT']:
+                xpath = TEXT_BOX['INPUT'][new_param_name]
                 SELENIUM.input_text(xpath, value)
             else:
                 raise ValueError(f"Missing support for this param: {param}")

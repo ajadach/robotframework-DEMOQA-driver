@@ -1,3 +1,4 @@
 robotframework
 robotframework-seleniumlibrary
 chromedriver_autoinstaller
+lxml

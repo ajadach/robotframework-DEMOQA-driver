@@ -7,7 +7,8 @@ setup(
     install_requires = [
         'robotframework',
         'robotframework-seleniumlibrary',
-        'chromedriver_autoinstaller'
+        'chromedriver_autoinstaller',
+        'lxml'
     ],
     author='Artur Ziółkowksi',
     author_email='artur.k.ziolkowski@gmail.com',

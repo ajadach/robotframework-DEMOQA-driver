@@ -8,12 +8,15 @@ from DemoQADriver.Elements.TextBox import TextBox
 import_text_box = 'Elements.TextBox'
 from DemoQADriver.Elements.CheckBox import CheckBox
 import_check_box = 'Elements.CheckBox'
+from DemoQADriver.Elements.WebTables import WebTables
+import_web_tables = 'Elements.WebTables'
 
 __all__ = (
     'forms',
     'elements',
     import_text_box,
-    import_check_box
+    import_check_box,
+    import_web_tables
 
 )
 
