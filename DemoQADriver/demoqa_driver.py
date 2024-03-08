@@ -30,13 +30,11 @@ class DemoQADriver():
         opt = webdriver.ChromeOptions()
         opt.add_argument("--start-maximized")
         opt.add_argument("--ignore-certificate-errors")
+        opt.add_argument("--user-data-dir=chrome-data")
         if headless:
             opt.add_argument("headless")
-    
-        d_c = DesiredCapabilities.CHROME.copy()
-        d_c['platform'] = "LINUX"
-    
-        index_or_alias = SELENIUM.create_webdriver("Chrome", alias=alias, options=opt, desired_capabilities=d_c)
+
+        index_or_alias = SELENIUM.create_webdriver("Chrome", alias=alias, options=opt)
         SELENIUM.set_window_size(1920, 1080)
         SELENIUM.set_selenium_speed(1)
         return index_or_alias
