@@ -2,7 +2,6 @@
 import chromedriver_autoinstaller
 
 from selenium import webdriver
-from selenium.webdriver import DesiredCapabilities
 from .instances import SELENIUM, screenshot_on_fail
 from robot.api.deco import keyword
 
@@ -30,21 +29,24 @@ class DemoQADriver():
         opt = webdriver.ChromeOptions()
         opt.add_argument("--start-maximized")
         opt.add_argument("--ignore-certificate-errors")
+
         if headless:
             opt.add_argument("headless")
-    
-        d_c = DesiredCapabilities.CHROME.copy()
-        d_c['platform'] = "LINUX"
-    
-        index_or_alias = SELENIUM.create_webdriver("Chrome", alias=alias, options=opt, desired_capabilities=d_c)
+
+        index_or_alias = SELENIUM.create_webdriver("Chrome", alias=alias, options=opt)
         SELENIUM.set_window_size(1920, 1080)
         SELENIUM.set_selenium_speed(1)
+        SELENIUM.maximize_browser_window()
         return index_or_alias
 
     @screenshot_on_fail
     @keyword("Navigate To Page")
     def navigate_to_page(self):
         SELENIUM.go_to('https://demoqa.com/')
+        try:
+            SELENIUM.click_element("//p[contains(text(), 'Consent')]")
+        except Exception:
+            pass
 
     @keyword("Close Browser")
     def close_browser(self):
