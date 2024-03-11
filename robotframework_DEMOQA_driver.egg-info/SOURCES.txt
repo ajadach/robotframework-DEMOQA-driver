@@ -1,6 +1,5 @@
 LICENSE
 README.md
-pyproject.toml
 setup.py
 robotframework_DEMOQA_driver.egg-info/PKG-INFO
 robotframework_DEMOQA_driver.egg-info/SOURCES.txt

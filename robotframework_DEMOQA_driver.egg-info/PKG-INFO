@@ -1,13 +1,12 @@
 Metadata-Version: 2.1
 Name: robotframework-DEMOQA-driver
-Version: 0.1.1
-Summary: UNKNOWN
-Home-page: UNKNOWN
+Version: 0.1.3
+Summary: UI driver to support demoqa.com
 Author: Artur Ziółkowksi
 Author-email: artur.k.ziolkowski@gmail.com
-License: UNKNOWN
-Platform: UNKNOWN
+Requires-Python: >=3.6
 License-File: LICENSE
-
-UNKNOWN
-
+Requires-Dist: robotframework
+Requires-Dist: robotframework-seleniumlibrary
+Requires-Dist: chromedriver_autoinstaller
+Requires-Dist: lxml

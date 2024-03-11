@@ -24,9 +24,10 @@ Elements: TextBox
     ${result}    DemoQADriver.Elements.TextBox.Read And Verify All Parameters    Name    Artur Ziolkowski
 
 Elements: WebTables
+    [Tags]    web
     DemoQADriver.Elements.Navigate To Page
     DemoQADriver.Elements.WebTables.Navigate To Page
-    DemoQADriver.Elements.WebTables.Create    First Name    Artur    Last Name    Ziolkowski    Email    temp@asd.com    Age    30    Salary    10000    Department    Poland
+    DemoQADriver.Elements.WebTables.Choose Parameters    First Name    Artur    Last Name    Ziolkowski    Email    temp@asd.com    Age    30    Salary    10000    Department    Poland
     ${result}    DemoQADriver.Elements.WebTables.Read All Parameters
     DemoQADriver.Elements.WebTables.Update Parameters    0    First Name    Artur
     DemoQADriver.Elements.WebTables.Delete    0

@@ -13,8 +13,8 @@ class WebTables():
         SELENIUM.click_element(MAIN_XPATH['web_tables'])
 
     @screenshot_on_fail
-    @keyword("Create")
-    def create(self, *params_and_values):
+    @keyword("Choose Parameters")
+    def choose_parameters(self, *params_and_values):
         parameters = params_and_values[::2]
         values = params_and_values[1::2]
         if not parameters or not values:
@@ -36,12 +36,11 @@ class WebTables():
     def delete(self, row_index):
         SELENIUM.click_element(f'//*[@id="delete-record-{int(row_index)+1}"]')
 
-
     @screenshot_on_fail
     @keyword("Read All Parameters")
     def read_all_parameters(self):
-        xpath_headers = '//*[@id="app"]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[1]'
-        xpath_data = '//*[@id="app"]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]'
+        xpath_headers = '//*[@id="app"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[1]'
+        xpath_data = '//*[@id="app"]/div/div/div/div[2]/div[2]/div[3]/div[1]/div[2]'
 
         inner_html = SELENIUM.get_element_attribute(xpath_headers, "innerHTML")
         root = lxml.html.fromstring(inner_html)
