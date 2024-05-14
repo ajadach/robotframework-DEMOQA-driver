@@ -4,12 +4,13 @@ Library          DemoQADriver
 Test Setup    Run Keywords    DemoQADriver.Open Browser    AND    DemoQADriver.Navigate To Page
 Test Teardown    DemoQADriver.Close Browser
 
+Force Tags    sele
+
 *** Variables ***
 
 *** Test Cases ***
 
 Elements: CheckBox
-    [Tags]    sele
     DemoQADriver.Elements.Navigate To Page
     DemoQADriver.Elements.CheckBox.Navigate To Page
     DemoQADriver.Elements.CheckBox.Choose Parameters    Downloads   Notes
