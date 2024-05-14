@@ -4,6 +4,8 @@ Library          DemoQADriver
 Test Setup    Run Keywords    DemoQADriver.Open Browser    AND    DemoQADriver.Navigate To Page
 Test Teardown    DemoQADriver.Close Browser
 
+Force Tags    sele
+
 *** Variables ***
 
 *** Test Cases ***
