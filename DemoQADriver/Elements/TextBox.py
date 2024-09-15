@@ -42,9 +42,13 @@ class TextBox():
 
     @screenshot_on_fail
     @keyword("Read And Verify All Parameters")
-    def read_and_verify_all_parameters(self, *expected_parameters_values):
-        parameters = expected_parameters_values[::2]
-        expected_values = expected_parameters_values[1::2]
+    def read_and_verify_all_parameters(self, **expected_parameters_values):
+        parameters = []
+        expected_values = []
+        for key, value in expected_parameters_values.items():
+            parameters.append(key)
+            expected_values.append(value)
+
         if not parameters or not expected_values:
             raise ValueError("Missing parameters or values.")
 
