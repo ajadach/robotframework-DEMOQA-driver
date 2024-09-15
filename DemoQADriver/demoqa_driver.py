@@ -41,8 +41,8 @@ class DemoQADriver():
 
     @screenshot_on_fail
     @keyword("Navigate To Page")
-    def navigate_to_page(self):
-        SELENIUM.go_to('https://demoqa.com/')
+    def navigate_to_page(self, url='https://demoqa.com/'):
+        SELENIUM.go_to(url)
         try:
             SELENIUM.click_element("//p[contains(text(), 'Consent')]")
         except Exception:
