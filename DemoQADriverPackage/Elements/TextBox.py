@@ -27,6 +27,7 @@ class TextBox():
                 SELENIUM.input_text(xpath, value)
             else:
                 raise ValueError(f"Missing support for this param: {param}")
+        SELENIUM.execute_javascript("window.scrollTo(0, 400)")
         SELENIUM.click_element(TEXT_BOX['BUTTON']['submit'])
 
     @screenshot_on_fail
