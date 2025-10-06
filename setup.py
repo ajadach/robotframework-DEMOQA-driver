@@ -2,8 +2,10 @@ from setuptools import setup, find_packages
 
 setup(
     name='robotframework-DEMOQA-driver',
-    version='0.1.3',
-    packages=find_packages(include=['exampleproject', 'exampleproject.*']),
+    version='1.0.7',
+    packages=find_packages(include=['DemoQADriverPackage', 'DemoQADriverPackage.*']),  # Zmień na właściwy katalog
+
+    # packages=find_packages(include=['exampleproject', 'exampleproject.*']),
     install_requires = [
         'robotframework',
         'robotframework-seleniumlibrary',
