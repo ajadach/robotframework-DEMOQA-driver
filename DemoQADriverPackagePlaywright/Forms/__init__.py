@@ -9,4 +9,4 @@ class forms():
     @screenshot_on_fail
     @keyword("Navigate To Page")
     def navigate_to_page(self):
-        BROWSER.click_element(xpath_main['forms'])
+        BROWSER.click(xpath_main['forms'])

@@ -17,4 +17,4 @@ class elements():
     @screenshot_on_fail
     @keyword("Navigate To Page")
     def navigate_to_page(self):
-        BROWSER.click_element(xpath_main['elements'])
+        BROWSER.click(xpath_main['elements'])

@@ -10,7 +10,7 @@ class WebTables():
     @screenshot_on_fail
     @keyword("Navigate To Text Box")
     def navigate_to_page(self):
-        BROWSER.click_element(MAIN_XPATH['web_tables'])
+        BROWSER.click(MAIN_XPATH['web_tables'])
 
     @screenshot_on_fail
     @keyword("Choose Parameters")
@@ -20,7 +20,7 @@ class WebTables():
         if not parameters or not values:
             raise ValueError("Missing parameters or values.")
 
-        BROWSER.click_element(WEB_TABLES['BUTTON']['add'])
+        BROWSER.click(WEB_TABLES['BUTTON']['add'])
         for param, value in zip(parameters, values):
             new_param_name = param.lower().replace(' ', '_')
 
@@ -29,12 +29,12 @@ class WebTables():
                 BROWSER.input_text(xpath, value)
             else:
                 raise ValueError(f"Missing support for this param: {param}")
-        BROWSER.click_element(WEB_TABLES['BUTTON']['submit'])
+        BROWSER.click(WEB_TABLES['BUTTON']['submit'])
 
     @screenshot_on_fail
     @keyword("Delete")
     def delete(self, row_index):
-        BROWSER.click_element(f'//*[@id="delete-record-{int(row_index)+1}"]')
+        BROWSER.click(f'//*[@id="delete-record-{int(row_index)+1}"]')
 
     @screenshot_on_fail
     @keyword("Read All Parameters")
@@ -75,7 +75,7 @@ class WebTables():
         if not parameters or not values:
             raise ValueError("Missing parameters or values.")
 
-        BROWSER.click_element(f'//*[@id="edit-record-{int(row_index)+1}"]')
+        BROWSER.click(f'//*[@id="edit-record-{int(row_index)+1}"]')
         for param, value in zip(parameters, values):
             new_param_name = param.lower().replace(' ', '_')
 
@@ -83,4 +83,4 @@ class WebTables():
                 xpath = WEB_TABLES['INPUT'][new_param_name]
                 BROWSER.clear_element_text(xpath)
                 BROWSER.input_text(xpath, value)
-        BROWSER.click_element(WEB_TABLES['BUTTON']['submit'])
+        BROWSER.click(WEB_TABLES['BUTTON']['submit'])

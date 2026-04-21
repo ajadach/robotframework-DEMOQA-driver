@@ -9,13 +9,13 @@ class CheckBox():
     @screenshot_on_fail
     @keyword("Navigate To Page")
     def navigate_to_page(self):
-        BROWSER.click_element(MAIN_XPATH['check_box'])
+        BROWSER.click(MAIN_XPATH['check_box'])
 
     def _expand_all(self):
-        BROWSER.click_element(CHECK_BOX['BUTTON']['expand'])
+        BROWSER.click(CHECK_BOX['BUTTON']['expand'])
 
     def _collapse_all(self):
-        BROWSER.click_element(CHECK_BOX['BUTTON']['collapse'])
+        BROWSER.click(CHECK_BOX['BUTTON']['collapse'])
 
     @screenshot_on_fail
     @keyword("Choose Parameters")
@@ -27,7 +27,7 @@ class CheckBox():
 
             if new_param_name in CHECK_BOX['CHECK_BOX']:
                 xpath = CHECK_BOX['CHECK_BOX'][new_param_name]
-                BROWSER.click_element(xpath)
+                BROWSER.click(xpath)
             else:
                 raise ValueError(f'Missing support for this paramter: {param}')
 

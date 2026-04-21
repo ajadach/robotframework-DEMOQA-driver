@@ -25,14 +25,18 @@ class DemoQADriverPackagePlaywright():
         *Return*
         | index_or_alias | index of session or alias |
         """
-        opt = webdriver.ChromeOptions()
+        # opt = webdriver.ChromeOptions()
         # opt.add_argument("--start-maximized")
-        opt.add_argument("--ignore-certificate-errors")
+        # opt.add_argument("--ignore-certificate-errors")
 
-        if headless:
-            opt.add_argument("headless")
+        # if headless:
+        #     opt.add_argument("headless")
 
-        index_or_alias = BROWSER.create_webdriver("Chrome", alias=alias, options=opt)
+        # index_or_alias = BROWSER.create_webdriver("Chrome", alias=alias, options=opt)
+        
+        index_or_alias = BROWSER.new_browser(headless=headless)
+        BROWSER.new_context()
+        BROWSER.new_page()
         return index_or_alias
 
     @screenshot_on_fail
@@ -40,7 +44,7 @@ class DemoQADriverPackagePlaywright():
     def navigate_to_page(self, url='https://demoqa.com/'):
         BROWSER.go_to(url)
         try:
-            BROWSER.click_element("//p[contains(text(), 'Consent')]")
+            BROWSER.click("//p[contains(text(), 'Consent')]")
         except Exception:
             pass
 

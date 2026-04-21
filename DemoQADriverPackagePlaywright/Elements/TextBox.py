@@ -9,7 +9,7 @@ class TextBox():
     @screenshot_on_fail
     @keyword("Navigate To Text Box")
     def navigate_to_page(self):
-        BROWSER.click_element(MAIN_XPATH['text_box'])
+        BROWSER.click(MAIN_XPATH['text_box'])
 
     @screenshot_on_fail
     @keyword("Choose Parameters")
@@ -28,7 +28,7 @@ class TextBox():
             else:
                 raise ValueError(f"Missing support for this param: {param}")
         BROWSER.execute_javascript("window.scrollTo(0, 400)")
-        BROWSER.click_element(TEXT_BOX['BUTTON']['submit'])
+        BROWSER.click(TEXT_BOX['BUTTON']['submit'])
 
     @screenshot_on_fail
     @keyword("Read All Parameters")
