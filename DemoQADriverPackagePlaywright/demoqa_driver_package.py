@@ -27,13 +27,13 @@ class DemoQADriverPackagePlaywright():
         """
         index_or_alias = BROWSER.new_browser(headless=headless)
         BROWSER.new_context(viewport={'width': 1920, 'height': 1080})
-        BROWSER.new_page()
+        # BROWSER.new_page()
         return index_or_alias
 
     @screenshot_on_fail
     @keyword("Navigate To Page")
     def navigate_to_page(self, url='https://demoqa.com/'):
-        BROWSER.go_to(url)
+        BROWSER.new_page(url=url)
         try:
             BROWSER.click("//p[contains(text(), 'Consent')]")
         except Exception:

@@ -1,10 +1,10 @@
 MAIN_XPATH = {
-    'text_box': '//*[@id="item-0"]',
-    'check_box': '//*[@id="item-1"]',
-    'radio_button': '//*[@id="item-2"]',
-    'web_tables': '//*[@id="item-3"]',
-    'buttons': '//*[@id="item-4"]',
-    'links': '//*[@id="item-5"]',
+    'text_box': '//*[@href="/text-box"]',
+    'check_box': '//*[@href="/checkbox"]',
+    'radio_button': '//*[@href="/radio-button"]',
+    'web_tables': '//*[@href="/webtables"]',
+    'buttons': '//*[@href="/buttons"]',
+    'links': '//*[@href="/links"]',
 }
 
 
