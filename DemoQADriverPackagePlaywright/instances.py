@@ -18,6 +18,6 @@ def screenshot_on_fail(func):
         try:
             return func(*args, **kwargs)
         except Exception as error:
-            BROWSER.capture_page_screenshot(filename=f'fail_screenshot-{uuid.uuid4()}.png')
+            BROWSER.take_screenshot(filename=f'fail_screenshot-{uuid.uuid4()}.png')
             raise error
     return wrapper

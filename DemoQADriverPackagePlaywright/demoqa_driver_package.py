@@ -25,17 +25,8 @@ class DemoQADriverPackagePlaywright():
         *Return*
         | index_or_alias | index of session or alias |
         """
-        # opt = webdriver.ChromeOptions()
-        # opt.add_argument("--start-maximized")
-        # opt.add_argument("--ignore-certificate-errors")
-
-        # if headless:
-        #     opt.add_argument("headless")
-
-        # index_or_alias = BROWSER.create_webdriver("Chrome", alias=alias, options=opt)
-        
         index_or_alias = BROWSER.new_browser(headless=headless)
-        BROWSER.new_context()
+        BROWSER.new_context(viewport={'width': 1920, 'height': 1080})
         BROWSER.new_page()
         return index_or_alias
 

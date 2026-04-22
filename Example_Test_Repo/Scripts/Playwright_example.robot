@@ -7,5 +7,4 @@ Library    DemoQADriverPackagePlaywright.Elements
 Example Test Case
     DemoQADriverPackagePlaywright.Open Browser
     DemoQADriverPackagePlaywright.Navigate To Page
-    Sleep    1m
     DemoQADriverPackagePlaywright.Elements.Navigate To Page
